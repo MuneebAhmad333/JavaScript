@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: bisque;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <ul class="Languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function AddLiist(Listitem){
+
+        const li = document.createElement('li')
+        li.innerHTML = `${Listitem}`
+        document.querySelector('.Languages').appendChild(li)
+
+    }
+    function OptiAddlist(Listitem){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(Listitem))
+        document.querySelector('.Languages').appendChild(li)
+    }
+    AddLiist('python')
+    AddLiist('Java')
+    OptiAddlist('kotlin')
+
+
+   //Edit Elements
+//    const replace =document.querySelector('li:nth-child(3)')
+//    //replace.innerHTML("React-Js")
+//    const newli = document.createElement('li')
+//    newli.textContent='React-Js'
+//    replace.replaceWith(newli)
+
+const replace = document.querySelector('li:nth-child(1)')
+replace.outerHTML ='<li>Ruby</li>'
+
+
+// Remove Element
+
+const remmoveElement = document.querySelector("li:last-child")
+remmoveElement.remove()
+
+
+</script> 
+</html>

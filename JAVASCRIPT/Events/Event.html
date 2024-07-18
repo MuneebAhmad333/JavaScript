@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="event" onclick=""></div>//bad approach
+    <div id="google" src="google.com"></div>
+</body>
+<script>
+    //Normal apprach
+    document.getElementById('event').onclick = function(){
+        alert('')
+    }
+    //best apprach
+    document.getElementById.addEventListener('click',function(e){
+        e.stopPropagation()
+        alert('')
+    },false)
+    
+
+    document.getElementById('#google').addEventListener('click',function(e){
+e.preventDefault()
+e.stopPropagation()
+    },false)
+    // in event bubbling it go from inside to outside in event propagation
+    //in event capturing it goes from outside to inside in event propagation
+
+document.getElementById('google').addEventListener('click',function(e){
+const removeIt =e.target.parentNode
+removeIt.remove()
+})
+
+
+    //types of event, timestamp, default prevented
+    //target , toElement , srcElement , currentTarget
+    //clientX , client Y , screen X , screen Y
+    //altkey , controlkey , shift key , key code
+</script>
+</html>
