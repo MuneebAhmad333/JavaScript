@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Functions</title>
+</head>
+<body>
+<h1>
+    Code with Muneeb
+</h1>    
+<button id="stop">stop</button>
+<script>
+     const Name = function(){
+        console.log("Muneeb")
+     }
+   
+   const ChangeTitle = function(){
+    document.querySelector('h1').innerHTML ="Best JS Series"
+   }
+   const Timer =setTimeout(ChangeTitle,2000)
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(Timer)
+    console.log('stopped')
+})
+
+</script>
+</body>
+</html>
