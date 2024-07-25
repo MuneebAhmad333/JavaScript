@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Priner</title>
+</head>
+<body>
+    <H1> print name in console</H1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+  let setter
+document.querySelector('#start').addEventListener('click',function(){
+   setter= setInterval(()=>{
+        console.log("Muneeb",Date.now().toLocaleString())},1000)
+})
+document.querySelector('#stop').addEventListener('click',function(){
+    clearInterval(setter)
+})
+</script>
+</html>
