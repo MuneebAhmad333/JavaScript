@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API XML</title>
+</head>
+<body>
+    <div id="name"></div>
+
+    <div id="photo"></div>
+    <div id="bio"></div>
+</body>
+<script>
+    /*XMLHttpRequest (XHR) is a JavaScript API to create HTTP requests. Its methods provide the ability to send network requests between the browser and a server. The Fetch API is the modern replacement for XMLHttpRequest.*/
+    let constring = 'https://api.github.com/users/hiteshchoudhary';
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', constring);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let data = JSON.parse(xhr.responseText);
+            let name = data.name;
+            let photo = data.avatar_url
+            let bio =data.bio 
+            document.getElementById('name').textContent = `Name:${name}`;
+            let img = document.createElement('img')
+            img.src =photo
+            img.alt ='Avatar'
+            img.width=200
+            document.getElementById('photo').appendChild(img)
+            document.getElementById('bio').textContent = `BIO:${bio}`;
+
+        }
+    };
+    xhr.send();
+</script>
+</html>
